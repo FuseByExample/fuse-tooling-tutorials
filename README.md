@@ -7,7 +7,7 @@ This folder contains two prefabricated `blueprint#.xml` files (5 and 6) that ena
 
 * Use `blueprint5.xml`, which is the routing context resulting from completing tutorial 4, to complete tutorial 5, _To Add Another Route to the CBR Routing Context_.
 * Use `blueprint6.xml` to complete any of the tutorials 6 through 9:
-_To  Debug a Routing Context_,
+_To  Debug a Routing Context_, 
 _To Trace a Message Through a Route_,
 _To Test a Route with JUnit_, and _To Publish a Fuse Project to Red Hat JBoss Fuse_.
 
