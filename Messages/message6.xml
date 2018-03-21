@@ -2,13 +2,12 @@
 
 <order>
     <customer>
-        <name>Hellabrunn Zoo</name>
-        <city>Munich</city>
-        <country>Germany</country>
+        <name>St Louis Zoo</name>
+        <city>St Louis MO </city>
+        <country>USA</country>
     </customer>
     <orderline>
         <animal>penguin</animal>
-        <quantity>18</quantity>
-        <maxAllowed>20</maxAllowed>
+        <quantity>10</quantity>
     </orderline>
 </order>

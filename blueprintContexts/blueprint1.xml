@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    JBoss, Home of Professional Open Source
-    Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
-    contributors by the @authors tag. See the copyright.txt in the
-    distribution for a full listing of individual contributors.
+    Copyright 2014-2017, Red Hat, Inc. and/or its affiliates, and individual
+    contributors by the @authors tag. 
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -23,11 +21,7 @@
    and the Camel namespaces.
 -->
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0                          
-    https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd                                                     
-    http://camel.apache.org/schema/blueprint                          
-    http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd                            http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
     <!--
       The namespace for the camelContext element in Blueprint is 'https://camel.apache.org/schema/blueprint'. Additionally,
       we can also define namespace prefixes we want to use them in the XPath expressions in our CBR.
@@ -38,23 +32,7 @@
     <camelContext id="_context1" xmlns="http://camel.apache.org/schema/blueprint">
         <route id="_route1">
             <from id="_from1" uri="file:src/data?noop=true"/>
-            <choice id="_choice1">
-                <when id="_when1">
-                    <xpath>order/orderline/quantity/text() &gt; /order/orderline/maxAllowed/text()</xpath>
-                    <log id="_log1" message="quantity requested exceeds the maximum allowed - contact customer"/>
-                    <setHeader headerName="Destination" id="_setHeader1">
-                        <constant>InvalidOrders</constant>
-                    </setHeader>
-                    <to id="_Invalid" uri="file:target/messages/invalidOrders"/>
-                </when>
-                <otherwise id="_else2">
-                    <log id="_log2" message="valid order - process"/>
-                    <setHeader headerName="Destination" id="_setHeader2">
-                        <constant>Dispatcher</constant>
-                    </setHeader>
-                    <to id="_Valid" uri="file:target/messages/validOrders"/>
-                </otherwise>
-            </choice>
+            <to id="_Received" uri="file:target/messages/received"/>
         </route>
     </camelContext>
 </blueprint>

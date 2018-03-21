@@ -3,13 +3,12 @@
 <order>
     <customer>
         <name>San Diego Zoo</name>
-        <city>San Diego</city>
+        <city>San Diego CA</city>
         <country>USA</country>
     </customer>
     <orderline>
         <animal>giraffe</animal>
         <quantity>3</quantity>
-        <maxAllowed>2</maxAllowed>
     </orderline>
 </order>
 

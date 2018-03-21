@@ -2,13 +2,12 @@
 
 <order>
     <customer>
-        <name>Bristol Zooilogical Gardens</name>
-        <city>Bristol</city>
-        <country>Great Britain</country>
+        <name>Berlin Zoo</name>
+        <city>Berlin</city>
+        <country>Germany</country>
     </customer>
     <orderline>
         <animal>emu</animal>
-        <quantity>5</quantity>
-        <maxAllowed>4</maxAllowed>
+        <quantity>6</quantity>
     </orderline>
 </order>

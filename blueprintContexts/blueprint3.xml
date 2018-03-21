@@ -32,7 +32,7 @@
          <from id="_from1" uri="file:src/data?noop=true"/>
          <choice id="_choice1">
               <when id="_when1">
-                 <xpath>/order/orderline/quantity/text() &gt; /order/orderline/maxAllowed/text()</xpath>
+                 <xpath>/order/orderline/quantity/text() &gt; 10</xpath>
                  <log id="_log1" message="quantity requested exceeds maximum allowed - contact customer"/>
                  <setHeader headerName="Destination" id="_setHeader1">
                       <constant>InvalidOrders</constant>
@@ -42,7 +42,7 @@
               <otherwise id="_else2">
                  <log id="_log2" message="valid order - process"/>
                  <setHeader headerName="Destination" id="_setHeader2">
-                      <constant>Dispatcher</constant>
+                      <constant>ValidOrders</constant>
                  </setHeader>
                  <to id="_Fulfill" uri="direct:OrderFulfillment"/>
               </otherwise>
@@ -59,28 +59,12 @@
                  <log id="_usa" message="Valid order - ship animals to USA customer"/>
                  <to id="_US" uri="file:target/messages/USA"/>
               </when>
-              <when id="_when/gb">
-                 <xpath>/order/customer/country = 'Great Britain'</xpath>
-                 <setHeader headerName="Destination" id="_setHead_uk">
-                      <constant>UK</constant>
-                 </setHeader>
-                 <log id="_uk" message="Valid order - ship animals to UK customer"/>
-                 <to id="_UK" uri="file:target/messages/GreatBritain"/>
-              </when>
-              <when id="_when/ger">
-                 <xpath>/order/customer/country = 'Germany'</xpath>
+              <otherwise id="_else/ger">
                  <setHeader headerName="Destination" id="_setHead_ger">
                       <constant>Germany</constant>
                  </setHeader>
-                 <log id="_ger" message="Valid order - ship animals to Germany customer"/>
+                 <log id="_ger" message="Valid order - ship animals to customer in Germany"/>
                  <to id="_GER" uri="file:target/messages/Germany"/>
-              </when>
-              <otherwise id="_else/fr">
-                 <setHeader headerName="Destination" id="_setHead_fr">
-                      <constant>France</constant>
-                 </setHeader>
-                 <log id="_fr" message="Valid order - ship animals to France customer"/>
-                 <to id="_FR" uri="file:target/messages/France"/>
               </otherwise>
            </choice>
        </route>

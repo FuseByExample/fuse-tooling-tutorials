@@ -2,14 +2,14 @@
 
 <order>
     <customer>
-        <name>London Zoo</name>
-        <city>London</city>
-        <country>Great Britain</country>
+        <name>Sea Life Centre</name>
+        <city>Munich</city>
+        <country>Germany</country>
     </customer>
     <orderline>
         <animal>penguin</animal>
-        <quantity>12</quantity>
-        <maxAllowed>20</maxAllowed>
+        <quantity>15</quantity>
+       
     </orderline>
 </order>
 

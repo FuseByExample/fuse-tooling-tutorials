@@ -2,13 +2,12 @@
 
 <order>
   <customer>
-    <name>Brooklyn Zoo</name>
-    <city>Brooklyn</city>
+    <name>Bronx Zoo</name>
+    <city>Bronx NY</city>
     <country>USA</country>
   </customer>
   <orderline>
     <animal>wombat</animal>
-    <quantity>15</quantity>
-    <maxAllowed>25</maxAllowed>
+    <quantity>12</quantity>
   </orderline>
 </order>
